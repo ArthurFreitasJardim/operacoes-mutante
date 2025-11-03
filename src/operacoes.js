@@ -36,7 +36,7 @@ function maximoArray(numeros) {
 }
 function minimoArray(numeros) {
   if (numeros.length === 0) throw new Error('Array vazio не possui valor mínimo.');
-  return Math.min(...numeros);
+  return Math.min(...numeros);soma
 }
 function valorAbsoluto(n) { return Math.abs(n); }
 function arredondar(n) { return Math.round(n); }

@@ -74,3 +74,150 @@ describe('Suíte de Testes Fraca para 50 Operações Aritméticas', () => {
   test('49. deve calcular o triplo de um número', () => { expect(triplo(10)).toBe(30); });
   test('50. deve calcular a metade de um número', () => { expect(metade(20)).toBe(10); });
 });
+
+describe('Suíte de Testes Forte para 50 Operações Aritméticas', () => {
+  test('divisao por zero', () => {
+    expect(() => divisao(10, 0)).toThrow('Divisão por zero não é permitida');
+  });
+
+  test('raiz quadrada de zero', () => {
+    expect(raizQuadrada(0)).toBe(0);
+  });
+
+  test('raiz quadrada de número negativo', () => {
+    expect(() => raizQuadrada(-4)).toThrow('Não é possível calcular a raiz quadrada de um número negativo.');
+  });
+
+  test('fatorial de zero', () => {
+    expect(fatorial(0)).toBe(1);
+  });
+
+  test('fatorial de um', () => {
+    expect(fatorial(1)).toBe(1);
+  });
+
+  test('fatorial de cinco', () => {
+    expect(fatorial(5)).toBe(120);
+  });
+
+  test('fatorial de numero par grande', () => {
+    expect(fatorial(10)).toBe(3628800);
+  });
+
+  test('fatorial de número negativo', () => {
+    expect(() => fatorial(-5)).toThrow('Fatorial não é definido para números negativos.');
+  });
+
+  test('media de array vazio', () => {
+    expect(mediaArray([])).toBe(0);
+  });
+
+  test('maximo de array vazio', () => {
+    expect(() => maximoArray([])).toThrow('Array vazio не possui valor máximo.');
+  });
+
+  test('minimo de array vazio', () => {
+    expect(() => minimoArray([])).toThrow('Array vazio не possui valor mínimo.');
+  });
+
+  test('is par com número impar', () => {
+    expect(isPar(3)).toBe(false);
+  });
+
+  test('is impar com número par', () => {
+    expect(isImpar(4)).toBe(false);
+  });
+
+  test('mdc com mdc diferente dos parametros', () => {
+    expect(mdc(12, 15)).toBe(3);
+  });
+
+  test('is primo com número um', () => {
+    expect(isPrimo(1)).toBe(false);
+  });
+
+  test('is primo com número negativo', () => {
+    expect(isPrimo(-7)).toBe(false);
+  });
+
+  test('is primo com número primo grande', () => {
+    expect(isPrimo(7919)).toBe(true);
+  });
+
+  test('is primo com número composto grande', () => {
+    expect(isPrimo(8000)).toBe(false);
+  });
+
+  test('produto de array vazio', () => {
+    expect(produtoArray([])).toBe(1);
+  });
+
+  test('clamp com valor abaixo do mínimo', () => {
+    expect(clamp(-5, 0, 10)).toBe(0);
+  });
+  
+  test('clamp com valor acima do máximo', () => {
+    expect(clamp(15, 0, 10)).toBe(10);
+  });
+
+  test('clam com valor igual ao mínimo', () => {
+    expect(clamp(0, 0, 10)).toBe(0);
+  });
+  
+  test('clamp com valor igual ao máximo', () => {
+    expect(clamp(10, 0, 10)).toBe(10);
+  });
+
+  test('is divisivel com resultado falso', () => {
+    expect(isDivisivel(10, 3)).toBe(false);
+  });
+
+  test('celsius para fahrenheit com valor alto', () => {
+    expect(celsiusParaFahrenheit(1000)).toBe(1832);
+  });
+
+  test('fahrenheit para celsius com valor baixo', () => {
+    expect(fahrenheitParaCelsius(-40)).toBe(-40);
+  });
+
+  test('fahrenheit para celsius com 100', () => {
+    expect(fahrenheitParaCelsius(100)).toBe(37.77777777777778);
+  });
+
+  test('inverso de zero', () => {
+    expect(() => inverso(0)).toThrow('Não é possível inverter o número zero.');
+  });
+
+  test('isMaiorQue com números iguais', () => {
+    expect(isMaiorQue(5, 5)).toBe(false);
+  });
+
+  test('isMaiorQue falso', () => {
+    expect(isMaiorQue(5, 50)).toBe(false);
+  });
+
+  test('isMenorQue com números iguais', () => {
+    expect(isMenorQue(5, 5)).toBe(false);
+  });
+
+  test('isMenorQue falso', () => {
+    expect(isMenorQue(50, 5)).toBe(false);
+  });
+
+  test('isEqual com valores diferentes', () => {
+    expect(isEqual(5, 10)).toBe(false);
+  });
+
+  test('mediana de array vazio', () => {
+    expect(() => medianaArray([])).toThrow('Array vazio не possui mediana.');
+  });
+
+  test('mediana com array de entrada não ordenado', () => {
+    expect(medianaArray([3, 1, 4, 2, 5])).toBe(3);
+  });
+
+  test('mediana com array de tamanho par', () => {
+    expect(medianaArray([1, 2, 3, 4])).toBe(2.5);
+  });
+
+});
